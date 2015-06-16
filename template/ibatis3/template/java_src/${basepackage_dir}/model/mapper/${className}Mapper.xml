@@ -111,7 +111,8 @@ PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
 	
 	<!-- 批量删除 -->
 	<delete id="delete_batch">
-        DELETE FROM ${table.sqlName} WHERE id IN 
+        DELETE FROM ${table.sqlName} 
+        WHERE <#list table.compositeIdColumns as column>${column.sqlName} </#list>IN 
         <foreach item="ids" collection="list" open="(" separator="," close=")">
 			${r"#{ids}"}
 		</foreach>

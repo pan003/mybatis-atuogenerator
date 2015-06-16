@@ -63,10 +63,10 @@ public class GeneratroMain {
 	public static void main(String[] args) throws Exception {
 		g.deleteOutRootDir(); // 清空目录
 
-//		String [] table_names = new String[]{"system_log", "system_user"};
-//		generateByTable(table_names); //按表名生成
+		String [] table_names = new String[]{"system_log", "system_user"};
+		generateByTable(table_names); //按表名生成
 		
-		generateByAllTable();
+//		generateByAllTable();
 		
 		
 		openDir();
