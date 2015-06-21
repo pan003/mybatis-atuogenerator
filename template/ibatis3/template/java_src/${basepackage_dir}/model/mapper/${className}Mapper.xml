@@ -23,7 +23,7 @@ PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
 	</sql>
 
 	<!--保存 -->
-	<insert id="insert">
+	<insert id="insert" useGeneratedKeys="true" keyProperty="${table.idColumn.columnNameFirstLower}">
 	    <![CDATA[
 	        INSERT INTO ${table.sqlName} (
 	        <#list table.columns as column>
